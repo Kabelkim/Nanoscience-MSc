@@ -13,7 +13,6 @@ GPAW is an open-source software package that implements DFT calculations using r
 ### DFT parameters
 Understanding the DFT parameters used in GPAW is essential for obtaining reliable and meaningful results.
 ```
-# DFT parameters
 xc = <functional>
 ecut = <eV>
 kpts = <(x,x,x)>
