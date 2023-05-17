@@ -4,7 +4,7 @@
 This repository contains a description of Density Functional Theory (DFT) and the algorithms used in the master thesis "Investigation of adsorption energies in phase-separated alloys." (The Python files can be found in [CODE](https://github.com/Kabelkim/Nanoscience-MSc/tree/main/Python%20code)). They utilize GPAW and ASE libraries in Python and are run as jobs on a high-performance cluster at the University of Copenhagen. 
 
 ## What is DFT?
-Density Functional Theory (DFT) is a quantum mechanical method used to study the electronic structure of atoms, molecules, and solids. It provides a powerful approach to investigating various properties such as energy, structure, and bonding in materials.
+DFT is a quantum mechanical method used to study the electronic structure of atoms, molecules, and solids. It provides a powerful approach to investigating various properties such as energy, structure, and bonding in materials.
 
 ## GPAW
 GPAW is an open-source software package that implements DFT calculations using real-space grids and projector-augmented wave method. It offers efficient and accurate simulations of materials by combining the advantages of both plane wave and localized basis set methods.
