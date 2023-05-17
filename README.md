@@ -1,6 +1,6 @@
 ![image](https://github.com/Kabelkim/Nanoscience-MSc/assets/65853425/383d9278-3008-4f4a-ad05-85883782259c)
 # Adsorption energy calculated with DFT
-Welcome to this Github repository, describing the algorithms and storing the Python code used to generate data in Joakim Lajer's master project. 
+Welcome to this Github repository, describing the algorithms and storing the Python code used to generate data in Joakim Lajer's master project. Which can be found in [CODE](https://github.com/Kabelkim/Nanoscience-MSc/tree/main/Python%20code).
 
 ## What is DFT?
 Density Functional Theory (DFT) is a quantum mechanical method used to study the electronic structure of atoms, molecules, and solids. It provides a powerful approach to investigate various properties such as energy, structure, and bonding in materials.
@@ -105,7 +105,7 @@ When submitting DFT calculations on a high-performance cluster, it is importatn 
 This is formatted with the parameters listed earlier, and help the calculatiosn run as smoothly as possible.
     
 ### Dependencies
-For the dependencies, look at section **Appendices B Anaconda enviroment list**.
+For the dependencies, look at section **Appendices B Anaconda enviroment list** in the thesis.
 
 
 ### Executing
@@ -125,4 +125,4 @@ Joakim Lajer (gpw395@alumni.ku.dk)
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0, January 2004 - see the [LICENSE](https://github.com/Kabelkim/phase-splitter/blob/main/LICENSE) file for details.
+This project is licensed under the GNU General Public License v3.0, January 2004 - see the [LICENSE](https://github.com/Kabelkim/Nanoscience-MSc/blob/main/LICENSE) file for details.
