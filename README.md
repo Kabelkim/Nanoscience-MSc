@@ -6,7 +6,7 @@ Welcome to this Github repository, describing the algorithms and storing the Pyt
 Density Functional Theory (DFT) is a quantum mechanical method used to study the electronic structure of atoms, molecules, and solids. It provides a powerful approach to investigate various properties such as energy, structure, and bonding in materials.
 
 ## GPAW
-GPAW is an open-source software package that implements DFT calculations using real-space grids and projector-augmented wave (PAW) method. It offers efficient and accurate simulations of materials by combining the advantages of both plane wave and localized basis set methods.
+GPAW is an open-source software package that implements DFT calculations using real-space grids and projector-augmented wave method. It offers efficient and accurate simulations of materials by combining the advantages of both plane wave and localized basis set methods.
 
 ## Description
 The algorithms were used as part of the master thesis "Investigation of adsorption energies in phase-separated alloys." They utilize GPAW and ASE liberies in python, and are run as jobs on a high-performance cluster at the University of copenhagen. 
