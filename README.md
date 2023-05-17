@@ -1,4 +1,5 @@
-![image](https://github.com/Kabelkim/Nanoscience-MSc/assets/65853425/383d9278-3008-4f4a-ad05-85883782259c)
+![image](https://github.com/Kabelkim/Nanoscience-MSc/assets/65853425/a6878964-df5c-4045-bc2a-ccf0023f3481)
+
 # Adsorption energy calculated with DFT
 Welcome to this Github repository, describing the algorithms and storing the Python code used to generate data in Joakim Lajer's master project. Which can be found in [CODE](https://github.com/Kabelkim/Nanoscience-MSc/tree/main/Python%20code).
 
