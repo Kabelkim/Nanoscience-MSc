@@ -1,20 +1,17 @@
 ![image](https://github.com/Kabelkim/Nanoscience-MSc/assets/65853425/a6878964-df5c-4045-bc2a-ccf0023f3481)
 
 # Adsorption energy calculated with DFT
-Welcome to this Github repository, describing the algorithms and storing the Python code used to generate data in Joakim Lajer's master project. Which can be found in [CODE](https://github.com/Kabelkim/Nanoscience-MSc/tree/main/Python%20code).
+This repository contains a description of Density Functional Theory (DFT) and the algorithms used in the master thesis "Investigation of adsorption energies in phase-separated alloys." (The Python files can be found in [CODE](https://github.com/Kabelkim/Nanoscience-MSc/tree/main/Python%20code)). They utilize GPAW and ASE libraries in Python and are run as jobs on a high-performance cluster at the University of Copenhagen. 
 
 ## What is DFT?
-Density Functional Theory (DFT) is a quantum mechanical method used to study the electronic structure of atoms, molecules, and solids. It provides a powerful approach to investigate various properties such as energy, structure, and bonding in materials.
+Density Functional Theory (DFT) is a quantum mechanical method used to study the electronic structure of atoms, molecules, and solids. It provides a powerful approach to investigating various properties such as energy, structure, and bonding in materials.
 
 ## GPAW
 GPAW is an open-source software package that implements DFT calculations using real-space grids and projector-augmented wave method. It offers efficient and accurate simulations of materials by combining the advantages of both plane wave and localized basis set methods.
 
 ## Description
-The algorithms were used as part of the master thesis "Investigation of adsorption energies in phase-separated alloys." They utilize GPAW and ASE liberies in python, and are run as jobs on a high-performance cluster at the University of copenhagen. 
-
-
 ### DFT parameters
-Understanding the DFT parameters used in GPAW is crucial for obtaining reliable and meaningful results.
+Understanding the DFT parameters used in GPAW is essential for obtaining reliable and meaningful results.
 ```
 # DFT parameters
 xc = <functional>
@@ -32,26 +29,26 @@ GPAW utilizes the Atomic Simulation Environment (ASE) library to build and manip
 ```
 atoms = <crystal-class>(<atom>,<size>,<vacuum>,<lattice-parameter>)
 ```
-- Crystal class: The crystal class refers to the symmetry group of a crystal structure. It describes the arrangement of atoms in the crystal lattice and determines its overall symmetry. Examples of the crystal classes includes HCP and FCC.
+- Crystal class: The crystal class refers to the symmetry group of a crystal structure. It describes the arrangement of atoms in the crystal lattice and determines its overall symmetry. Examples of the crystal classes include HCP and FCC, which are implemented throughout the algorithms.
 
 - Atom: The atom refers to the individual chemical element present in the crystal structure. It can be represented by its chemical symbol, such as H for hydrogen, O for oxygen, and so on.
 
 - Size: The size of the crystal refers to its dimensions or extent in space. It can be specified in terms of length, width, and height.
 
-- Vacuum: The vacuum, in the context of crystal structures, refers to the empty space between periodic replicas of the crystal lattice. It is often included to prevent interactions between periodic images and simulate an isolated system. The vacuum size can affect the accuracy of calculations and is typically chosen to be large enough to minimize interactions between periodic images.
+- Vacuum: The vacuum, in the context of crystal structures, refers to the space between periodic replicas of the crystal lattice. It is often included to prevent interactions between periodic images and simulate an isolated system. The vacuum size can affect the accuracy of calculations and is typically chosen to be large enough to minimize interactions between periodic images.
 
-- Lattice parameter: he lattice parameter refers to the length of the edges of the unit cell in a crystal structure. In the algorithms used it is denoted by the symbol a, describing the unit cell length. 
+- Lattice parameter: the lattice parameter refers to the length of the edges of the unit cell in a crystal structure. In the algorithms used, it is denoted by the symbol a, describing the unit cell length. 
 
-### Phase seperating the alloys
+### Phase separating the alloys
 To manipulate atoms in ASE, including layer-phase separated alloys, you can follow these steps:
 ```
 for index in [atom.index for atom in atoms if atom.tag == <x>]:
     atoms[index].symbol = '<guest-atom>'
 ```
-Here the atoms in the indices in the layer denoted in "atom.tag == <x>", where x represents the layer. Then guest atoms will be inserted in the postions in that layer, the code can be combinded with a list containing different guest elements, thus producing many calculations. 
+Here the atoms in the indices in the layer are denoted in "atom.tag == <x>", where x represents the layer. Then guest atoms will be inserted in the positions in that layer, the code can be combined with a list containing different guest elements, thus producing many calculations. 
 
 ### Attaching adsorbate
-To attact an adsorbate to the alloy surface, the following part can be implemented:
+To attach an adsorbate to the alloy surface, the following part can be implemented:
  
 ```
 adsorbate = Atoms(<adsorbate-atom>,(<[x,x,x]>,<[x,x,x]>))
@@ -70,7 +67,7 @@ calc = GPAW(mode=PW({ecut}),
 atoms.set_calculator(calc)
 atoms.get_potential_energy()
 ```
-The calc descriptor, uses the input from earlier and combines them. Then the DFT is using these parameters and calculating the desired outcome, in this case the potential energies. It is crucial to both perform the DFT calculation before and after attaching the adsorbate to get information about the interactions. 
+The calc descriptor uses the input from earlier and combines them. Then the DFT is using these parameters and calculates the desired outcome, in this case, the potential energies. It is crucial to perform the DFT calculation before and after attaching the adsorbate to get information about the interactions. 
 
 ### Cluster parameters
 To run DFT calculations using GPAW on a high-performance cluster, several key parameters needs to be considered. These parameters help allocate computational resources efficiently and optimize the execution of the DFT calculations. 
@@ -92,7 +89,7 @@ mem_per_cpu = <mb>
 - mem_per_cpu: Memory per cpu defines the amount of memory allocated per CPU or core. It is crucial to allocate sufficient memory to avoid memory-related errors during the DFT calculations. 
     
 ### Formatting cluster scripts
-When submitting DFT calculations on a high-performance cluster, it is importatn to format the cluster scripts correctly. These scripts contain directives that define the desired configuration and execution parameters for the job.
+When submitting DFT calculations on a high-performance cluster, it is important to format the cluster scripts correctly. These scripts contain directives that define the desired configuration and execution parameters for the job.
 ```
 #SBATCH --job-name={<filename>}
 #SBATCH --partition={partition}
@@ -103,15 +100,15 @@ When submitting DFT calculations on a high-performance cluster, it is importatn 
 #SBATCH --ntasks-per-core={ntasks_per_core}
 #SBATCH --mem-per-cpu={mem_per_cpu}
 ```
-This is formatted with the parameters listed earlier, and help the calculatiosn run as smoothly as possible.
+This is formatted with the parameters listed earlier and helps the calculations run as smoothly as possible.
     
 ### Dependencies
-For the dependencies, look at section **Appendices B Anaconda enviroment list** in the thesis.
+For the dependencies, look at section **Appendices B Anaconda environment list** in the thesis.
 
 
 ### Executing
 
-The python files are directly executed on the HPC database, where all the submission files are created and can be executed directly.
+The Python files are directly executed on the HPC database, where all the submission files are created and can be executed directly.
 
 ## Authors
 
